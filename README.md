@@ -17,6 +17,7 @@ javascript study
       - id, tel, email 입력양식 정규식 사용하여 유효성 검사 
       - 모든 입력창이 채워져야 완료버튼 활성화
       - css는 bootstrap 혼합 사용
+      - 문제점? ex) 한 번 완료버튼 활성화가 true 가 되면 버튼을 누르기 전에 form 입력창을 수정해서 false가 되어도 완료버튼이 비활성화로 변화지 않음 
       
 
 
