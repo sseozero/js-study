@@ -23,7 +23,7 @@ javascript study
 
 
 <details>
-<summary>temlplate.css</summary>
+<summary>template.css</summary>
 : bootstrap 무료 템플릿 가져와서 부분 수정 (https://bootsnipp.com/snippets/dldxB)
 
 </details>
