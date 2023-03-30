@@ -8,7 +8,7 @@ function check(){
     let id=loginId.value;
     let pw=loginPw.value;
     if(localStorage.getItem(id) == pw){
-        document.location.href="loginmain.html?id";
+        document.location.href="loginmain.html";
         alert(id+"님 반갑습니다");
     }else{
         alert("로그인 실패");
