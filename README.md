@@ -12,7 +12,7 @@ javascript study
       - 아이디/비밀번호 => localstorage에 저장됨
 
 
-( 확인 방법 : `f12` ->  `application` ->  `Stroage` -> `Local Storage` )
+( 확인 방법 : `f12` ->  `application` ->  `Storage` -> `Local Storage` )
 
 
 2. 로그인(login)
@@ -78,6 +78,20 @@ javascript study
       
 
 - 로그인 기능 가능  
+
+
+- local storage 참고 사이트
+
+    저장 :  https://gimongstudy.tistory.com/73
+
+
+    로그인 :  https://gimongstudy.tistory.com/75
+
+
+    호출  : https://hianna.tistory.com/697
+
+
+
     
 
 </details>
@@ -99,8 +113,8 @@ javascript study
 
 
 ##### :computer: 작업
-- ~~ form 유효성 검사 ~~
-- ~~ html5 웹스토리지 ~~
+- ~~form 유효성 검사~~
+- ~~html5 웹스토리지~~
 
 
 
