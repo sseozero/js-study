@@ -92,7 +92,7 @@
         //아이디 입력창에 글자를 키보드로 입력할 때, 4글자 이상+영대소문자or숫자면 성공메시지/ 4글자 미만+한글or공백포함이면 실패메시지를 보여주는 함수
         id.addEventListener("keyup", (e) => {
             let a=/^[a-zA-Z0-9]*$/;
-            if ( (id.value).length>=4 && id.value.match(a)) {
+            if ( (id.value).length>=4 && (id.value).match(a)) {
                 sucmsg.classList.remove('hide');
                 failmsg.classList.add('hide');
                 btnon();
@@ -100,6 +100,8 @@
             else {
                 sucmsg.classList.add('hide');
                 failmsg.classList.remove('hide');
+                join.disabled=true;
+
             }
         });
 
@@ -114,6 +116,10 @@
             else {
                 mismatmsg.classList.remove('hide');
                 matmsg.classList.add('hide');
+                join.disabled=true;
+
+
+              
             }
         });
        
@@ -128,6 +134,8 @@
             }
             else {
                 misnummsg.classList.remove('hide');
+                join.disabled=true;
+
             }
         });
 
@@ -138,6 +146,8 @@
                 btnon();
             }else{
                 misemailmsg.classList.remove('hide');
+                join.disabled=true;
+
 
             }
         });
@@ -145,13 +155,12 @@
 
 
         function btnon(){
-   
+                
             if(!(id.value && pw.value && pwmore.value && tel.value && email.value)==true){
                 join.disabled=true;
             }else{
                 join.disabled=false;
             }
-                
         }
     
 
