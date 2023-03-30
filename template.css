@@ -83,7 +83,7 @@ html {
   
   /* FORM TYPOGRAPHY*/
   
-  #formContent input[type=button], #formContent input[type=submit], #formContent input[type=reset]  {
+  #formContent input[type=button], #formContent input[type=submit], #formContent input[type=reset] {
     background-color: #56baed;
     border: none;
     color: white;
@@ -105,7 +105,7 @@ html {
     transition: all 0.3s ease-in-out;
   }
   
-  #formContent input[type=button]:hover,#formContent input[type=submit]:hover, #formContent input[type=reset]:hover , #formContent input[type=password]:hover {
+  #formContent input[type=button]:hover,#formContent input[type=submit]:hover, #formContent input[type=reset]:hover  {
     background-color: #39ace7;
   }
   

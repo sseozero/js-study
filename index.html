@@ -41,17 +41,20 @@
   
 	  <!-- Login Form -->
 	  <form>
-		<input type="text" id="login" class="fadeIn second" name="login" placeholder="ID">
-		<input type="password" id="password" class="fadeIn third" name="login" placeholder="PASSWORD">
-		<input type="submit" class="fadeIn fourth mt-4" value="Log In">
+		<input type="text" id="loginid" class="fadeIn second" name="login" placeholder="ID">
+		<input type="password" id="loginpw" class="fadeIn third" name="login" placeholder="PASSWORD">
+		<input type="submit" class="fadeIn fourth mt-4" value="Log In" id="loginbutton" >
 	  </form>
   
 	  <!-- join  -->
 	  <div id="formFooter">
 		<a class="underlineHover"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign Up</a>
 	  </div>
-  
 	</div>
+
+  <div class="clear">
+    <button class="mt-4 btn btn-outline-secondary btn-sm" id="clearbtn">회원정보 전체삭제</button>
+  </div>
   </div>
 
 
@@ -71,8 +74,8 @@
 				<form action="#">
 				<fieldset class="d-grid justify-content-center">
 					<label>아이디</label>
-					<input type="text" id="userid"  placeholder="영대소문자,숫자만 가능" required>
-					<div class="failure-message hide text-danger">아이디는 영대소문자, 숫자만 가능 </div>
+          <input type="text" id="userid"  placeholder="영대소문자,숫자만 가능 (4자리이상)" required>
+          <div class="failure-message hide text-danger">아이디는 4자리이상 영문,숫자만 가능 </div>
 					<div class="success-message hide text-primary">사용할 수 있는 아이디</div>
 				</fieldset>
 			
@@ -109,7 +112,7 @@
 			
 		</div>
 		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="canclebutton">취소</button>
 		</div>
 	  </div>
 	</div>
@@ -122,102 +125,16 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
+  <script src="join.js"> </script>
+  <script src="login.js"> </script>
+
   <script>
-	
-	  let id= document.querySelector('#userid');
-        let pw= document.querySelector('#userpw');
-        let pwmore = document.querySelector('#userpwmore');
-        let tel = document.querySelector('#usertel');
-        let email = document.querySelector('#useremail');
-        let join = document.querySelector('#joinbutton');
+    let clearbtn=document.querySelector("#clearbtn");
 
-        let failmsg = document.querySelector('.failure-message');
-        let sucmsg = document.querySelector('.success-message');
-        let mismatmsg = document.querySelector('.mismatch-message');
-        let matmsg = document.querySelector('.match-message');
-        let misnummsg = document.querySelector('.misnumber-message');
-        let misemailmsg = document.querySelector('.misemail-message');
+    clearbtn.addEventListener("click",function(){
+      localStorage.clear();
+    })
 
-
-        join.disabled=true;
-
-        let idvalue=false;
-        let pwvalue=false;
-        let telvalue=false;
-        let emailvalue=false;
-
-        id.addEventListener("keyup", (e) => {
-            let a=/^[a-zA-Z0-9]*$/;
-            if ( (id.value).length>=4 && (id.value).match(a)) {
-                sucmsg.classList.remove('hide');
-                failmsg.classList.add('hide');
-                idvalue=true;
-            }
-            else {
-                sucmsg.classList.add('hide');
-                failmsg.classList.remove('hide');
-                idvalue=false;
-            }
-            btnon();
-        });
-
-
-        pwmore.addEventListener("keyup", (e)=>{
-            if (pw.value === pwmore.value) {
-                mismatmsg.classList.add('hide');
-                matmsg.classList.remove('hide');
-               pwvalue=true;
-            }
-            else {
-                mismatmsg.classList.remove('hide');
-                matmsg.classList.add('hide');
-                pwvalue=false;
-            }
-            btnon();
-        });
-       
-
-
-        tel.addEventListener("keyup", (e)=>{
-            let b=/^[0-9]*$/;
-            if ((tel.value).match(b)) {
-                misnummsg.classList.add('hide');
-                telvalue=true;
-            }
-            else {
-                misnummsg.classList.remove('hide');
-                telvalue=false;
-            }
-            btnon();
-        });
-
-
-
-        email.addEventListener("keyup",(e)=>{
-            let c= /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-            if((email.value).match(c)){
-                misemailmsg.classList.add('hide');
-                emailvalue=true;
-            }else{
-                misemailmsg.classList.remove('hide');
-                emailvalue=false;
-            }
-            btnon();
-        });
-
-
-
-        function btnon(){
-                
-            if((idvalue && pwvalue && telvalue && emailvalue)==true){
-                join.disabled=false;
-            }else{
-                join.disabled=true;
-            }
-        }
-    
-
-</script>
-
+  </script>
 </body>
 </html>

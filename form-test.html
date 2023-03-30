@@ -28,13 +28,16 @@
 </head>
 
 <body>
+
+    <!-- join -->
+
     <div class="container pt-5">
     <h1 class="text-center my-3">회원가입</h1>
     <form action="#">
     <fieldset class="d-grid justify-content-center">
         <label>아이디</label>
-        <input type="text" id="userid"  placeholder="영대소문자,숫자만 가능" required>
-        <div class="failure-message hide text-danger">아이디는 영대소문자, 숫자만 가능 </div>
+        <input type="text" id="userid"  placeholder="영대소문자,숫자만 가능 (4자리이상)" required>
+        <div class="failure-message hide text-danger">아이디는 4자리이상 영문,숫자만 가능 </div>
         <div class="success-message hide text-primary">사용할 수 있는 아이디</div>
     </fieldset>
 
@@ -70,104 +73,32 @@
 </div>
 
 
-    <script>
-        let id= document.querySelector('#userid');
-        let pw= document.querySelector('#userpw');
-        let pwmore = document.querySelector('#userpwmore');
-        let tel = document.querySelector('#usertel');
-        let email = document.querySelector('#useremail');
-        let join = document.querySelector('#joinbutton');
 
-        let failmsg = document.querySelector('.failure-message');
-        let sucmsg = document.querySelector('.success-message');
-        let mismatmsg = document.querySelector('.mismatch-message');
-        let matmsg = document.querySelector('.match-message');
-        let misnummsg = document.querySelector('.misnumber-message');
-        let misemailmsg = document.querySelector('.misemail-message');
+<!-- login -->
+<div class="container pt-5">
+    <h1 class="text-center my-3">로그인</h1>
+    <form action="#">
+    <fieldset class="d-grid justify-content-center">
+        <label>아이디</label>
+        <input type="text" id="loginid"  placeholder="ID" required>
+    </fieldset>
 
-
-        join.disabled=true;
-
-        let idvalue=false;
-        let pwvalue=false;
-        let telvalue=false;
-        let emailvalue=false;
-
-        id.addEventListener("keyup", (e) => {
-            let a=/^[a-zA-Z0-9]*$/;
-            if ( (id.value).length>=4 && (id.value).match(a)) {
-                sucmsg.classList.remove('hide');
-                failmsg.classList.add('hide');
-                idvalue=true;
-            }
-            else {
-                sucmsg.classList.add('hide');
-                failmsg.classList.remove('hide');
-                idvalue=false;
-            }
-            btnon();
-        });
+    <fieldset class="d-grid justify-content-center">
+        <label>비밀번호</label>
+        <input type="password" id="loginpw" placeholder="PASSWORD" required>
+    </fieldset>
 
 
-        pwmore.addEventListener("keyup", (e)=>{
-            if (pw.value === pwmore.value) {
-                mismatmsg.classList.add('hide');
-                matmsg.classList.remove('hide');
-               pwvalue=true;
-            }
-            else {
-                mismatmsg.classList.remove('hide');
-                matmsg.classList.add('hide');
-                pwvalue=false;
-            }
-            btnon();
-        });
-       
+    <fieldset class="d-grid justify-content-center mt-4">
+        <button id="loginbutton" class="btn btn-warning" >로그인</button>
+        
+    </fieldset>
+</form>
+</div>
 
 
-        tel.addEventListener("keyup", (e)=>{
-            let b=/^[0-9]*$/;
-            if ((tel.value).match(b)) {
-                misnummsg.classList.add('hide');
-                telvalue=true;
-            }
-            else {
-                misnummsg.classList.remove('hide');
-                telvalue=false;
-            }
-            btnon();
-        });
-
-
-
-        email.addEventListener("keyup",(e)=>{
-            let c= /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-            if((email.value).match(c)){
-                misemailmsg.classList.add('hide');
-                emailvalue=true;
-            }else{
-                misemailmsg.classList.remove('hide');
-                emailvalue=false;
-            }
-            btnon();
-        });
-
-
-
-        function btnon(){
-                
-            if((idvalue && pwvalue && telvalue && emailvalue)==true){
-                join.disabled=false;
-            }else{
-                join.disabled=true;
-            }
-        }
-    
-
-
-            
-     
-    </script>
+    <script src="join.js"> </script>
+    <script src="login.js"> </script>
 </body>
 
 </html>
