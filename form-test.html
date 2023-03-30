@@ -88,78 +88,78 @@
 
         join.disabled=true;
 
+        let idvalue=false;
+        let pwvalue=false;
+        let telvalue=false;
+        let emailvalue=false;
 
-        //아이디 입력창에 글자를 키보드로 입력할 때, 4글자 이상+영대소문자or숫자면 성공메시지/ 4글자 미만+한글or공백포함이면 실패메시지를 보여주는 함수
         id.addEventListener("keyup", (e) => {
             let a=/^[a-zA-Z0-9]*$/;
             if ( (id.value).length>=4 && (id.value).match(a)) {
                 sucmsg.classList.remove('hide');
                 failmsg.classList.add('hide');
-                btnon();
+                idvalue=true;
             }
             else {
                 sucmsg.classList.add('hide');
                 failmsg.classList.remove('hide');
-                join.disabled=true;
-
+                idvalue=false;
             }
+            btnon();
         });
 
 
-        //비밀번호 입력창에 값을 입력하면, 비밀번호 값과 비밀번호 확인값이 일치하지 않으면 불일치 메시지를 표시하는 함수
         pwmore.addEventListener("keyup", (e)=>{
             if (pw.value === pwmore.value) {
                 mismatmsg.classList.add('hide');
                 matmsg.classList.remove('hide');
-                btnon();
+               pwvalue=true;
             }
             else {
                 mismatmsg.classList.remove('hide');
                 matmsg.classList.add('hide');
-                join.disabled=true;
-
-
-              
+                pwvalue=false;
             }
+            btnon();
         });
        
 
 
-        //전화번호 값을 입력할때, 숫자가 아니면 불일치 메시지를 표시하는 함수
         tel.addEventListener("keyup", (e)=>{
             let b=/^[0-9]*$/;
             if ((tel.value).match(b)) {
                 misnummsg.classList.add('hide');
-               btnon();
+                telvalue=true;
             }
             else {
                 misnummsg.classList.remove('hide');
-                join.disabled=true;
-
+                telvalue=false;
             }
+            btnon();
         });
+
+
 
         email.addEventListener("keyup",(e)=>{
             let c= /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
             if((email.value).match(c)){
                 misemailmsg.classList.add('hide');
-                btnon();
+                emailvalue=true;
             }else{
                 misemailmsg.classList.remove('hide');
-                join.disabled=true;
-
-
+                emailvalue=false;
             }
+            btnon();
         });
 
 
 
         function btnon(){
                 
-            if(!(id.value && pw.value && pwmore.value && tel.value && email.value)==true){
-                join.disabled=true;
-            }else{
+            if((idvalue && pwvalue && telvalue && emailvalue)==true){
                 join.disabled=false;
+            }else{
+                join.disabled=true;
             }
         }
     
