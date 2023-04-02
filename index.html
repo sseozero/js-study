@@ -21,6 +21,7 @@
         input {
             width: 300px;
         }
+
    
       /* --------- */
 
@@ -28,11 +29,13 @@
     </style>
 </head>
 <body>
-	
+
 <div class="wrapper fadeInDown">
+
 	<div id="formContent">
+
 	  <!-- Tabs Titles -->
-  
+		
 	  <!-- Icon -->
 	  <div class="fadeIn first my-3">
 		<i class="xi-emoticon-happy-o fs-1 " id="icon"></i>
@@ -52,11 +55,17 @@
 	  </div>
 	</div>
 
-  <div class="clear">
+  <div class="clear row">
     <button class="mt-4 btn btn-outline-secondary btn-sm" id="clearbtn">회원정보 전체삭제</button>
-  </div>
+	<button onclick="sub()" class="btn btn-dark btn-sm mt-3">다크모드로 전환</button>
+
   </div>
 
+
+  </div>
+
+
+  
 
 
   
@@ -127,6 +136,8 @@
 
   <script src="join.js"> </script>
   <script src="login.js"> </script>
+  <script src="background.js"> </script>
+
 
   <script>
     let clearbtn=document.querySelector("#clearbtn");

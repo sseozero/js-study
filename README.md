@@ -25,6 +25,8 @@ javascript study
     - 해당 버튼 클릭시 local Storage 에 저장되어 있던 모든 정보 삭제됨
 
 
+4. 다크모드 전환
+
 -----
 
 
@@ -106,6 +108,17 @@ javascript study
 
 </details>
 
+
+
+<details>
+<summary>background.js</summary>
+
+
+- background 컬러 전환
+      
+    
+
+</details>
 
 ------------
 
