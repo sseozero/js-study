@@ -62,11 +62,12 @@
         <div class="misemail-message hide text-danger">올바른 형식이 아닙니다.</div>
     </fieldset>
 
-    <fieldset class="d-grid justify-content-center mt-4">
-        <button id="joinbutton" class="btn btn-warning" onclick="alert('완료!')">회원가입</button>
-        
-    </fieldset>
+    
 </form>
+	<div class="d-grid justify-content-center mt-4">
+        <button id="joinbutton" class="btn btn-warning">회원가입</button>
+        
+    </div>
 </div>
 
 <div class="container pt-5">
@@ -196,14 +197,18 @@
             let newPw=pw.value;
             let newTel=tel.value;
             let newEmail=email.value;
-            localStorage.setItem(newId,newPw,newTel, newEmail);
+			let arr = {'id':newId, 'pw':newPw, 'tel':newTel, 'email':newEmail };
+            //localStorage.setItem(newId,newPw,newTel, newEmail);
+			localStorage.setItem(1,JSON.stringify(arr));
+            document.location.href="loginmain.html?index=1";
+			return false;
         }
 
         function init(){
             join.addEventListener("click",submitNew);
             console.log("1");
         }
-            
+
         init();
      
     </script>
